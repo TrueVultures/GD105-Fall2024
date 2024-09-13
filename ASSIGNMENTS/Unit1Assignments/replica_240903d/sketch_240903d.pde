@@ -1,5 +1,3 @@
-// The replica piece IS an album cover named "No Love Deep Web" by Death Grips. Most versions of the image are censord yet some are uncensord therefore I advise not to directly search the album up.
-
 void setup(){
   size(800, 800);
   background(#839574);
@@ -40,11 +38,11 @@ void draw(){
   
   //lighting
   noStroke();
-  fill(#FFF5E7);
+  fill(#FFF5E7, -178);
   triangle(0, 450, 0, 575, 200, 500);
-  fill(#FFF1E3);
+  fill(#FFF1E3, -77);
   triangle(0, 475, 0, 700, 225, 525);
-  fill(#FFFAEC);
+  fill(#FFFAEC, -444);
   triangle(0, 500, 0, 726, 200, 550);
   
   fill(#AA805D);
@@ -56,6 +54,16 @@ void draw(){
   strokeWeight(250);
   strokeCap(SQUARE);
   line(0,870,470, 300);
+  
+  stroke(#f5db82);
+  strokeWeight(1);
+  line(0, 674, 10, 644);
+  line(0, 674, 22, 637);
+  line(0, 665, 5, 634);
+  
+  stroke(#DED09F);
+  line(222, 800, 261, 768);
+  line(222, 800, 257, 787);
   
   save("ReplicaPiece.png");
 }
