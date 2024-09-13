@@ -281,4 +281,6 @@ void draw(){
   fill(255);
   textSize(50);
   text("MOON GOD \n      RHER", 600, 768);
+  
+  save("PersonalPieceOutput.png");
 }  
