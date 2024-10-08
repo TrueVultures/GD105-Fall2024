@@ -69,8 +69,8 @@ void draw(){
   //video games
   image(cyberpunk, -377, -346, 187, 226);
   image(yumenikki, -204, -320, 187, 275);
-  image(darksouls3, 212, -319, 204, 260);
-  image(stalker, 384, -351, 144, 197);
+  image(darksouls3, 212, -320, 204, 260);
+  image(stalker, 384, -352, 144, 197);
   image(termina, 0, -360, 225, 191);
   image(mgs2, 0, -131, 672/3, 788/3);
   

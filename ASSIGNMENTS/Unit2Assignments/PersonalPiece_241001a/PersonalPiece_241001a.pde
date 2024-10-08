@@ -1,11 +1,22 @@
+PImage Inverse;
+
 void setup(){
   size(800,800);
   background(0);
   frameRate(50);
+  Inverse = loadImage("Inverse.png");
+  imageMode(CENTER);
 }
 
 void draw(){
   //background(0);
+  
+  //inversed image
+  imageMode(CENTER);
+  if(frameCount % 100 == 0){
+    image(Inverse, 400, 400);
+  } else {
+  }
   
   float randomX, randomY, boxX, boxY;
   
@@ -36,7 +47,6 @@ void draw(){
   
   noStroke();
   fill(random(255), random(0), random(0));
- 
   square(map(cos(frameCount*0.06), -1, 1, width, 0), 
         map(sin(frameCount*0.08), -1, 1, 600, 600), 25);
         
@@ -57,10 +67,6 @@ void draw(){
   stroke(random(255));
   square(map(cos(frameCount*0.02), -1, 1, 100, 0), 
         map(sin(frameCount*0.01), -1, 1, 300, 300), 50);
-        
-  if(frameCount <= 360){
-    saveFrame("frames/output-####.png");
-  }  
 }
   
   
