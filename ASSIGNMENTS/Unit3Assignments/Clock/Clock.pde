@@ -1,6 +1,6 @@
-//red light turns on and off every hour
-//yellow light turns on and off every minute
-//green light turns on and off every second
+//red light flashes every other hour
+//yellow light flashes every other minute
+//green light flashes every other second
 
 void setup(){
   size(400, 950);
@@ -45,7 +45,8 @@ void draw(){
   //Checks time on canvas
   //fill(255);
   //text(hour() + ":" + minute() + ":" + second(), width/2, height/2);
-}
 
-//if(frameCount <= 60){
-   // saveFrame("frames/output-####.png");
+if(frameCount <= 120){
+    saveFrame("frames/output-####.png");
+  }
+ }
