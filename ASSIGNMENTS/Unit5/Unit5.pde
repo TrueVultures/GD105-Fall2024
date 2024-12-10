@@ -1,20 +1,22 @@
 //entire canvas is a clock
 //the sun stays in center. sun is the clock in center 
-//clock has hour, min, and sec hand that tells the current time
-//whats featured on the canvas shifts based on current time
-//Whenever it is day, the sun and clock are revealed. whenever it is night, the moon takes over the center position
-//based on time, whether it be midday or midnight, more will be revealed depending on the ratio of white to black on the canvas
+//clock has hour, and min hand that tells the current time
+//whats featured on the canvas shifts based on current time (hour and day of the month)
+//Whenever it is day(hours 5-19,) the sun and clock are revealed. whenever it is night(18-4,) the moon takes over the center position
+//based on time, whether it be midday or midnight, and phases of the moon, more will be revealed depending on the ratio of white to black on the canvas
 //white background displays black clouds, black background displays white stars
-//(time can be altered by pressed w & d for second clock
+//moon phases and what can be seen can be altered by pressed a & d for second clock
+//time can be altered with w & s keys for second clock
 
-
-//arcs around both clocks with for loops, roman numerals around first clock, sigils around second clock, create moon, figure how to change canvas from white to black (frameCount)
-//phases of the moon depending on day, day displayed on second clock (turn seconds into days), moon appears when canvas is dark (fades in?), white stars for black canvas, black clouds for white canvas
+//sigils around second clock, create moon and all phases, figure how to change canvas from white to black (frameCount)
+//phases of the moon depending on day, current phase displayed on second clock, moon appears when canvas is dark (fades in when canvas is fully black), white stars for black canvas, black clouds for white canvas, hidden info for each
 //audio plays depending on time and moon phases
 
 //moon changes every 4 days
 //clock hands must have inverted colors based on surface color, all clock colors invert on new moon phase
-float secRadius;
+
+//clock must somehow be featured during moon phases(hidden second clock on the upper right of the canvas in white stroke, appears when background is fully black)
+float dayRadius;
 float minRadius;
 float hrsRadius;
 
@@ -24,7 +26,7 @@ void setup(){
   noSmooth();
   
   int radius = min(width, height) / 2;
-  secRadius = radius * 0.15;
+  dayRadius = radius * 0.15;
   minRadius = radius * 0.45;
   hrsRadius = radius * 0.40;
 }
@@ -33,7 +35,7 @@ void draw(){
   background(255);
   
   // float variables for analog clock
-  float s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
+  float d = map(day(), 0, 30, 0, TWO_PI) - HALF_PI;
   float m = map(minute() + norm(second(), 0, 60), 0, 60, 0, TWO_PI) - HALF_PI; 
   float h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI * 2) - HALF_PI;
   
@@ -147,7 +149,7 @@ void draw(){
   circle(450, 450, 5);
   stroke(255);
   circle(515, 450, 5);
-  line(515, 450, width/2 + cos(s) * secRadius, width/2 + sin(s) * secRadius);
+  line(515, 450, width/2 + cos(d) * secRadius, width/2 + sin(d) * secRadius);
   
   //MOON PHASES
   
@@ -186,20 +188,6 @@ void draw(){
   noFill();
   arc(617, 390, 116, 265, -1, 1);
   arc(540, 393, 116, 265, -4, -2);
-  
-  //caved eye
-  fill(0);
-  strokeWeight(3);
-  stroke(0);
-  circle(580, 370, 170);
-  stroke(255);
-  strokeWeight(2);
-  noFill();
-  circle(580, 370, 135);
-  circle(580, 370, 60);
-  fill(255);
-  circle(580, 370, 20);
- 
   
   //etc
   fill(#D1D1D1);
@@ -243,7 +231,6 @@ void draw(){
   fill(#050505);
   ellipse(310, 370, 104, 80);
   
-  
   //caved eye
   fill(0);
   circle(310, 370, 74);
@@ -251,5 +238,6 @@ void draw(){
   noFill();
   strokeWeight(20);
   circle(310, 370, 40);
-  
+
+  //
 }
