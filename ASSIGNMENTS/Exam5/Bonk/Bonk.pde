@@ -24,13 +24,11 @@ void draw(){
 
   if(rightEdge || leftEdge){
     velocity.x *= -1;
-    velocity.rotate(random(-.02, .02));
     println("collided/true");
   }
   
   if(bottomEdge || topEdge){
     velocity.y *= -1;
-    velocity.rotate(random(-.01, .02));
     println("collided/true");
   }
 }
