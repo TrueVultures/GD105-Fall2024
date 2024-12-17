@@ -27,6 +27,5 @@ void draw(){
   for(int i = 0; i < b.length; i++){
     b[i].display();
     b[i].update();
-  }
-   
+  }   
 }  
