@@ -24,8 +24,8 @@
 
 //clock hands must have inverted colors based on surface color, all clock colors invert on new moon phase
 
-illus[] q;
-moon[] w;
+illus[] a;
+moon[] b;
 
 float dayRadius;
 float minRadius;
@@ -42,9 +42,15 @@ void setup(){
   minRadius = radius * 0.45;
   hrsRadius = radius * 0.40;
   
-  q = new illus[1];
+  a = new illus[15];
+  for(int i = 0; i < a.length; i++){
+    a[i] = new illus();
+  }
   
-  w = new moon[1];
+  b = new moon[15];
+  for(int i = 0; i < a.length; i++){
+    b[i] = new moon();
+  }
 }
 
 void draw(){
@@ -205,11 +211,11 @@ void draw(){
   line(780, 760, 780 + cos(h) * hrsRadius, 760 + sin(h) * hrsRadius);
   
   
-  for(int i = 0; i < q.length; i++){
-    q[i].display();
+   for(int i = 0; i < a.length; i++){
+    a[i].display();
   }
   
-  for(int i = 0; i < w.length; i++){
-    w[i].display();
+  for(int i = 0; i < b.length; i++){
+    b[i].display();
   }
 }

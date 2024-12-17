@@ -8,6 +8,8 @@ class illus{
     void display(){
       
     //bottom middle 
+    noFill();
+    strokeWeight(3);
     line(300, 830, 600, 830);
     line(450, 900, 450, 810);
     triangle(275, 870, 300, 830, 325, 870);
@@ -51,7 +53,7 @@ class illus{
     line(58, 452, 37, 436);
     arc(81, 330, 79, 54, -2, 1);
     
-    //middle left
+    //upper middle
     square(450, 25, 30);
     square(450, 65, 30);
     square(450, 105, 30);
@@ -81,7 +83,7 @@ class illus{
     ellipse(760, 110, 202, 126);
     circle(760, 112, 84);
     
-    fill(255);
+    
     triangle(865, 105, 877, 110, 865, 115);
     triangle(660, 105, 645, 110, 660, 115);
     
