@@ -32,7 +32,7 @@ float minRadius;
 float hrsRadius;
 
 void setup(){
-  frameRate(50);
+  //frameRate(50);
   size(900,900);
   noSmooth();
   
@@ -218,4 +218,6 @@ void draw(){
   for(int i = 0; i < b.length; i++){
     b[i].display();
   }
+  
+  //save("output4.png");
 }

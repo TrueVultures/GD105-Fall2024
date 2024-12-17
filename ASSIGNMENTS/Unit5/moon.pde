@@ -6,7 +6,7 @@ class moon{
   void display(){
      
   //full moon
-  if(hour()>20){
+  //if(hour()>20){
     stroke(255);
     fill(0);
     strokeWeight(1);
@@ -83,6 +83,10 @@ class moon{
     arc(517, 677, 327, 146, -2, 0);
     arc(515, 660, 360, 146, -2, 0);
     
+    arc(569, 437, 360, 435, -2, 1);
+    arc(409, 221, 383, 128, 0, 1);
+    arc(615, 516, 240, 94, 0, 3);
+    
     //caved eye
     fill(0);
     strokeWeight(3);
@@ -97,11 +101,11 @@ class moon{
     circle(580, 370, 20);
     
     //to crescent moon
-    if(day()%4==0){
+    //if(day()%4==0){
     fill(0);
     stroke(0);
     ellipse(589, 450, 363, 495);
-    }
+    //}
     
     //nose
     fill(255);
@@ -138,7 +142,7 @@ class moon{
     circle(310, 370, 40);
     
     //to true moon
-    if(day()%8==0){
+
       noStroke();
       fill(255);
       circle(450, 450, 630);
@@ -165,7 +169,7 @@ class moon{
       ellipse(335, 310, 140, 140);
       ellipse(224, 350, 80, 80);
       ellipse(555, 310, 140, 140);
-      ellipse(659, 357, 80, 80);
+      ellipse(659, 350, 80, 80);
       
       strokeWeight(3);
       stroke(197);
@@ -203,7 +207,7 @@ class moon{
       line(477, 526, 561, 505);
       line(558, 504, 631, 524);
       line(624, 524, 762, 496);
-      }
-     }
+      //}
+     //}
     }
    }

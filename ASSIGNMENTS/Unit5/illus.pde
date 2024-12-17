@@ -54,6 +54,7 @@ class illus{
     arc(81, 330, 79, 54, -2, 1);
     
     //upper middle
+
     square(450, 25, 30);
     square(450, 65, 30);
     square(450, 105, 30);
@@ -92,5 +93,7 @@ class illus{
     
     triangle(861, 136, 855, 142, 868, 143);
     triangle(660, 124, 649, 135, 664, 132);
+    
+  
   }
 } 
